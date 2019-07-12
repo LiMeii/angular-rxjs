@@ -9,18 +9,52 @@ import { publish, refCount } from 'rxjs/operators';
 })
 
 export class RxjsColdHotComponent implements OnInit {
-    testArray = [1, 2, 3, 4, 5];
+
     ngOnInit() {
         //this.coldObservable();
+        // this.makeColdToHotWithArray();
+        this.makeColdToHotWithInterval();
         // this.warmObservable1();
-        this.hotObservable();
+        // this.hotObservable();
     }
 
     coldObservable() {
-        let obs$ = from(this.testArray);
+        let obs$ = from([1, 2, 3, 4, 5]);
+
+        // obs$.subscribe(data => { console.log("1st subscriber:" + data) });
+        // obs$.subscribe(data => { console.log("2nd subscriber:" + data) });
 
         obs$.subscribe(data => { console.log("1st subscriber:" + data) });
-        obs$.subscribe(data => { console.log("2nd subscriber:" + data) });
+        setTimeout(() => {
+            obs$.subscribe(data => { console.log("2nd subscriber:" + data) });
+        }, 1100);
+
+    }
+
+    makeColdToHotWithArray() {
+        let obs$ = from([1, 2, 3, 4, 5]).pipe(
+            publish()
+        ) as ConnectableObservable<any>;
+        obs$.connect();
+
+        obs$.subscribe(data => { console.log("1st subscriber:" + data) });
+        setTimeout(() => {
+            obs$.subscribe(data => { console.log("2st subscriber:" + data) });
+        }, 2100);
+
+    }
+    makeColdToHotWithInterval() {
+        let obs$ = interval(1000).pipe(
+            publish()
+        ) as ConnectableObservable<any>;
+        obs$.connect();
+        setTimeout(() => {
+            obs$.subscribe(data => { console.log("1st subscriber:" + data) });
+            setTimeout(() => {
+                obs$.subscribe(data => { console.log("2st subscriber:" + data) });
+            }, 1100);
+        }, 2100);
+
     }
 
     warmObservable1() {
