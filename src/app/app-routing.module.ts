@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: "rxjslearning",
     loadChildren: "./modules/rxjs-learning/rxjs-learning.module#RxjsLearningModule"
+  },
+  {
+    path: "rxjscoldhot",
+    loadChildren: "./modules/rxjs-cold-hot/rxjs-cold-hot.module#RxjsColdHotModule"
   }
 ];
 
