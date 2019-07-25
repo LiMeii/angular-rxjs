@@ -10,6 +10,7 @@ demo code for deep understanding the following RxJS:
 - how to create Hot Observables
 - what's the Warm Observables
 - how to create Warm Observables
+- difference among Subject, BehaviorSubject, AsyncSubject, ReplaySubject
 
 Here is the series of blog:
 
@@ -17,6 +18,7 @@ Here is the series of blog:
 
 - [RxJS：Cold vs Hot Observables](https://limeii.github.io/2019/07/rxjs-coldhot-observable/)
 
+- [RxJS：Subject](https://limeii.github.io/2019/07/rxjs-subject/)
 # usage
 
 Download to your local
