@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { from, Observable, interval, ConnectableObservable } from "rxjs"
-import { publish, refCount } from 'rxjs/operators';
+import { publish, refCount, share, shareReplay } from 'rxjs/operators';
 
 
 @Component({
@@ -13,9 +13,11 @@ export class RxjsColdHotComponent implements OnInit {
     ngOnInit() {
         //this.coldObservable();
         // this.makeColdToHotWithArray();
-        this.makeColdToHotWithInterval();
-        // this.warmObservable1();
+       // this.makeColdToHotWithInterval();
+        // this.warmObservable();
         // this.hotObservable();
+       // this.warmObservableWithShare();
+       this.warmObservableWithShareReplay();
     }
 
     coldObservable() {
@@ -57,7 +59,7 @@ export class RxjsColdHotComponent implements OnInit {
 
     }
 
-    warmObservable1() {
+    warmObservable() {
         let obs$ = interval(1000).pipe(
             publish(),
             refCount()
@@ -69,6 +71,36 @@ export class RxjsColdHotComponent implements OnInit {
                 obs$.subscribe(data => { console.log("2st subscriber:" + data) });
 
             }, 1100);
+
+        }, 2000);
+    }
+
+    warmObservableWithShare(){
+        let obs$ = interval(1000).pipe(
+            share()
+        )
+
+        setTimeout(() => {
+            obs$.subscribe(data => { console.log("1st subscriber:" + data) });
+            setTimeout(() => {
+                obs$.subscribe(data => { console.log("2st subscriber:" + data) });
+
+            }, 5100);
+
+        }, 2000);
+    }
+
+    warmObservableWithShareReplay(){
+        let obs$ = interval(1000).pipe(
+            shareReplay(2)
+        )
+
+        setTimeout(() => {
+            obs$.subscribe(data => { console.log("1st subscriber:" + data) });
+            setTimeout(() => {
+                obs$.subscribe(data => { console.log("2st subscriber:" + data) });
+
+            }, 5100);
 
         }, 2000);
     }
