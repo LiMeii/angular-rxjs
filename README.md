@@ -1,27 +1,26 @@
 # AngularRxjs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+This project was generated with Angular CLI version 8.0.1.
 
-## Development server
+demo code for deep understanding the following RxJS:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- why we need RxJS
+- what's Cold Observables and Hot Observables
+- difference between Cold Observables and Hot Observables
+- how to create Hot Observables
+- what's the Warm Observables
+- how to create Warm Observables
 
-## Code scaffolding
+Here is the series of blog:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [RxJS入门和概览](https://limeii.github.io/2019/07/rxjs-introduce/)
 
-## Build
+- [RxJS：Cold vs Hot Observables](https://limeii.github.io/2019/07/rxjs-coldhot-observable/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# usage
 
-## Running unit tests
+Download to your local
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run 'npm install'
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run 'ng serve'
