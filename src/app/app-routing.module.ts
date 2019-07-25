@@ -14,11 +14,15 @@ const routes: Routes = [
   {
     path: "rxjscoldhot",
     loadChildren: "./modules/rxjs-cold-hot/rxjs-cold-hot.module#RxjsColdHotModule"
+  },
+  {
+    path: "rxjssubject",
+    loadChildren: "./modules/rxjs-subject/rxjs-subject.module#RxjsSubjectModule"
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
