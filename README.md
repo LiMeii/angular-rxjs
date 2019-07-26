@@ -18,7 +18,7 @@ Here is the series of blog:
 
 - [RxJS：Cold vs Hot Observables](https://limeii.github.io/2019/07/rxjs-coldhot-observable/)
 
-- [RxJS：Subject](https://limeii.github.io/2019/07/rxjs-subject/)
+- [RxJS：四种Subject的用法和区别](https://limeii.github.io/2019/07/rxjs-subject/)
 # usage
 
 Download to your local
