@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: "rxjssubject",
     loadChildren: "./modules/rxjs-subject/rxjs-subject.module#RxjsSubjectModule"
+  },
+  {
+    path: "rxjserrorhandle",
+    loadChildren: "./modules/rxjs-error-handle/rxjs-error-handle.module#RxjsErrorHanleModule"
   }
 ];
 
