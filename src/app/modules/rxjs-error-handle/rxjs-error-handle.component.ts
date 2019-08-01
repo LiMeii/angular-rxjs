@@ -17,9 +17,10 @@ export class RxjsErrorHanleComponent implements OnInit {
             .subscribe(
                 res => {
                     this.users = res;
+                    console.log("here is the value " + res);
                 },
                 error => {
-                    console.log(error);
+                    console.log("something went wrong " + error);
                 },
                 () => {
                     console.log("http request has been completed!")
