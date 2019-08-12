@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: "rxjserrorhandle",
     loadChildren: "./modules/rxjs-error-handle/rxjs-error-handle.module#RxjsErrorHanleModule"
+  },
+  {
+    path: "rxjscache",
+    loadChildren: "./modules/rxjs-cache/rxjs-cache.module#RxjsCacheModule"
   }
 ];
 
