@@ -11,6 +11,7 @@ demo code for deep understanding the following RxJS:
 - what's the Warm Observables
 - how to create Warm Observables
 - difference among Subject, BehaviorSubject, AsyncSubject, ReplaySubject
+- caching with RxJS
 
 Here is the series of blog:
 
@@ -19,6 +20,9 @@ Here is the series of blog:
 - [RxJS：Cold vs Hot Observables](https://limeii.github.io/2019/07/rxjs-coldhot-observable/)
 
 - [RxJS：四种Subject的用法和区别](https://limeii.github.io/2019/07/rxjs-subject/)
+
+- [RxJS：如何通过RxJS实现缓存](https://limeii.github.io/2019/08/rxjs-caching/)
+
 # usage
 
 Download to your local
