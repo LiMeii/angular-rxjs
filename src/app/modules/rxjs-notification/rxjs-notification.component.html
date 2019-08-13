@@ -1,0 +1,17 @@
+<div class="container" style="margin-top:30px;width: 40%;">
+    <div class="row justify-content-md-center">
+        <div class="alert alert-warning w-100" role="alert">
+            <strong>Warning!</strong> new user infor available, please click to update!
+            <button type="button" style="margin-left: 20px;" class="btn btn-warning"
+                (click)="forceReload()">Update</button>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div style="margin: 10px;" class="card w-100" *ngFor="let user of users$ |async">
+            <div class="card-body">
+                <h5 class="card-title"><strong>User Name:</strong> {{user.login}}</h5>
+                <p class="card-text"><strong>GitHub URL:</strong> {{user.url}}</p>
+            </div>
+        </div>
+    </div>
+</div>

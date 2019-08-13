@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: "rxjscache",
     loadChildren: "./modules/rxjs-cache/rxjs-cache.module#RxjsCacheModule"
+  },
+  {
+    path: "rxjsnotification",
+    loadChildren: "./modules/rxjs-notification/rxjs-notification.module#RxjsNotificationModule"
   }
 ];
 

@@ -114,6 +114,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-rxjs"
 }
