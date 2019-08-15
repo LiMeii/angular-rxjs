@@ -4,19 +4,19 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../interface/rxjs-notification.interface";
 import { map, catchError, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { of, Observable, timer, Subject } from 'rxjs';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 const CACHE_SIZE = 1;
 const REFRESH_INTERVAL = 10000;
-const END_POINT = "https://api.github.com/users?since=";
+const API_ENDPOINT = "https://api.github.com/users?since=";
 
 @Injectable()
 
 export class RxjsNotificationService {
 
     private cacheUsers$: Observable<Array<User>>;
-    private userStartId = 0;
-    private reload$ = new Subject<void>();
+    private userStartId: number = 0;
 
     constructor(private http: HttpClient) { }
 
@@ -26,7 +26,6 @@ export class RxjsNotificationService {
             this.cacheUsers$ = timer$
                 .pipe(
                     switchMap(() => this.requestUsers()),
-                    takeUntil(this.reload$),
                     shareReplay(CACHE_SIZE)
                 );
         }
@@ -34,7 +33,8 @@ export class RxjsNotificationService {
     }
 
     private requestUsers() {
-        return this.http.get<Array<User>>(END_POINT + this.userStartId)
+        this.userStartId = this.userStartId + 30;
+        return this.http.get<Array<User>>(API_ENDPOINT + this.userStartId)
             .pipe(
                 map(respone => respone),
                 catchError(error => {
@@ -42,13 +42,6 @@ export class RxjsNotificationService {
                     return of([]);
                 })
             )
-    }
-
-    forceReload() {
-
-        this.reload$.next();
-        this.cacheUsers$ = null;
-
     }
 
 }
