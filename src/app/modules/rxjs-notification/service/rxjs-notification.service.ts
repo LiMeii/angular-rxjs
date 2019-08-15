@@ -2,9 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { User } from "../interface/rxjs-notification.interface";
-import { map, catchError, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
-import { of, Observable, timer, Subject } from 'rxjs';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { map, catchError, shareReplay, switchMap } from 'rxjs/operators';
+import { of, Observable, timer } from 'rxjs';
 
 
 const CACHE_SIZE = 1;

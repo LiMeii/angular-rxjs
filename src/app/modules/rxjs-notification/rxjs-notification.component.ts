@@ -30,7 +30,8 @@ export class RxjsNotificationComponent {
         const initNotification$ = this.getNotifications();
         const show$ = initNotification$.pipe(mapTo(true));
         const hide$ = this.updateClick$.pipe(mapTo(false));
-        this.showNotificatoin$ = merge(show$,hide$);
+        this.showNotificatoin$ = merge(show$, hide$);
+
     }
 
     getUserOnce() {
