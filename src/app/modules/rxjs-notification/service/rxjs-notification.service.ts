@@ -33,14 +33,18 @@ export class RxjsNotificationService {
 
     private requestUsers() {
         this.userStartId = this.userStartId + 30;
-        return this.http.get<Array<User>>(API_ENDPOINT + this.userStartId)
-            .pipe(
-                map(respone => respone),
-                catchError(error => {
-                    console.log("something went wrong " + error)
-                    return of([]);
-                })
-            )
+        if (this.userStartId < 100) {
+            return this.http.get<Array<User>>(API_ENDPOINT + this.userStartId)
+                .pipe(
+                    map(respone => respone),
+                    catchError(error => {
+                        console.log("something went wrong " + error)
+                        return of([]);
+                    })
+                )
+        } else {
+            return of([]);
+        }
     }
 
 }

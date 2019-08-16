@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: "rxjsnotification",
     loadChildren: "./modules/rxjs-notification/rxjs-notification.module#RxjsNotificationModule"
+  },
+  {
+    path: "rxjsunsubscribe",
+    loadChildren: "./modules/rxjs-unsubscribe/rxjs-unsubscribe.module#RxjsUnsubscribeModule"
   }
 ];
 
