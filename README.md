@@ -12,6 +12,8 @@ demo code for deep understanding the following RxJS:
 - how to create Warm Observables
 - difference among Subject, BehaviorSubject, AsyncSubject, ReplaySubject
 - caching with RxJS
+- simple notification with RxJS
+- RxJS unsubscribe
 
 Here is the series of blog:
 
