@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+.margin-small {
+    margin: 20px;
+}
+
+.margin-top-small {
+    margin-top: 20px;
+}
+
+.margin-right-small {
+    margin-right: 20px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 20px;
+}
+
+.margin-large {
+    margin: 60px;
+}
+
+.margin-top-large {
+    margin-top:60px;
+}
+
+.margin-right-large {
+    margin-right: 60px;
+}
+
+.margin-bottom-large {
+    margin-bottom: 60px;
+}
+
+.margin-left-large {
+    margin-left: 60px;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction:row;
+}
