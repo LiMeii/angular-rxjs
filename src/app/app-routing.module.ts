@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: "rxjsunsubscribe",
     loadChildren: "./modules/rxjs-unsubscribe/rxjs-unsubscribe.module#RxjsUnsubscribeModule"
+  },
+  {
+    path: "rxjsautocomplete",
+    loadChildren: "./modules/rxjs-autocomplete/rxjs-autocomplete.module#RxjsAutoCompleteModule"
   }
 ];
 
