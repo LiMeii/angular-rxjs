@@ -3,10 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { map, catchError } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 
-import { SearchResult } from "../interface/rxjs-autocomplete.interface";
+import { SearchResult } from "../interface/rxjs-searchableinput.interface";
 
 @Injectable()
-export class RxjsAutocompleteService {
+export class RxjsSearchableInputService {
 
     constructor(private http: HttpClient) { }
 

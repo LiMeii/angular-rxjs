@@ -36,8 +36,8 @@ const routes: Routes = [
     loadChildren: "./modules/rxjs-unsubscribe/rxjs-unsubscribe.module#RxjsUnsubscribeModule"
   },
   {
-    path: "rxjsautocomplete",
-    loadChildren: "./modules/rxjs-autocomplete/rxjs-autocomplete.module#RxjsAutoCompleteModule"
+    path: "rxjssearchinput",
+    loadChildren: "./modules/rxjs-searchable-input/rxjs-searchableinput.module#RxjsSearchableInputModule"
   }
 ];
 

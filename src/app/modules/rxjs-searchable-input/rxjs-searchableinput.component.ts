@@ -1,17 +1,17 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Observable, Subject, Subscription, of, merge } from 'rxjs';
-import { map, mapTo, debounceTime, distinctUntilChanged, mergeMap, filter, switchMap } from 'rxjs/operators';
+import { map, debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
-import { SearchResult, User } from "./interface/rxjs-autocomplete.interface";
-import { RxjsAutocompleteService } from "./service/rxjs-autocomplete.service";
+import { SearchResult, User } from "./interface/rxjs-searchableinput.interface";
+import { RxjsSearchableInputService } from "./service/rxjs-searchableinput.service";
 
 
 @Component({
-    templateUrl: "./rxjs-autocomplete.component.html"
+    templateUrl: "./rxjs-searchableinput.component.html"
 
 })
 
-export class RxjsAutoCompleteComponent implements OnInit, OnDestroy {
+export class RxjsSearchableInputComponent implements OnInit, OnDestroy {
 
     users: Array<User> = [];
     onSearchUser$ = new Subject<KeyboardEvent>();
@@ -20,7 +20,7 @@ export class RxjsAutoCompleteComponent implements OnInit, OnDestroy {
     emptySearch$: Observable<any>;
 
     subscription: Subscription;
-    constructor(private rxjsAutocompleteService: RxjsAutocompleteService) { }
+    constructor(private rxjsSearchableInputService: RxjsSearchableInputService) { }
 
     ngOnInit() {
         this.validSearch$ = this.onSearchUser$
@@ -29,7 +29,7 @@ export class RxjsAutoCompleteComponent implements OnInit, OnDestroy {
                 map(event => (<HTMLInputElement>event.target).value),
                 filter(input => input !== ""),
                 distinctUntilChanged(),
-                switchMap(data => this.rxjsAutocompleteService.searchUser(data))
+                switchMap(data => this.rxjsSearchableInputService.searchUser(data))
             )
 
         this.emptySearch$ = this.onSearchUser$.pipe(
